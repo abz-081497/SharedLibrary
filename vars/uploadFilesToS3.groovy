@@ -2,6 +2,9 @@ def call(String path = "*.jar", String s3Path = "/",String workingDir = "target"
 
     withAWS(region: stageParams.Region, credentials:'awscredentials') {
         awsIdentity()
+		echo path
+		echo s3Path
+		echo workingDir
         s3Upload( 
             workingDir: workingDir,
             includePathPattern: path,
