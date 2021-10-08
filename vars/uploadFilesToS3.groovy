@@ -1,4 +1,4 @@
-def call(Map stageParams = [Region: "us-east-1", s3Bucket: "test-bucket-2221", s3Path: "/"], String path = "*.jar", String s3Path = "/") {
+def call(String path = "*.jar", String s3Path = "/", Map stageParams = [Region: "us-east-1", s3Bucket: "test-bucket-2221", s3Path: "/"]) {
 
     withAWS(region: stageParams.Region, credentials:'awscredentials') {
         awsIdentity()
